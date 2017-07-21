@@ -1,11 +1,16 @@
-<html ng-app="testApp">
+<html ng-app="ngTodo">
 <head>
 <script src="../libraries/angular.min.js"></script>
 <script src="main.js"></script>
 </head>
 <body>
 <div ng-controller="mainController">
-{{name}}
+<h1>TO DO LIST</h1>
+
+<div ng-repeat="todo in todos"> 
+{{todo}}
+
+</div>
 </div>
 </body>
 </html>
