@@ -1,16 +1,23 @@
 <html ng-app="ngTodo">
 <head>
-<script src="../libraries/angular.min.js"></script>
-<script src="main.js"></script>
+	<style>
+		#detailOfTodo{
+			border:2px solid black;
+		}
+	</style>
+	<script src="../libraries/angular.min.js"></script>
+	<script src="main.js"></script>
 </head>
 <body>
-<div ng-controller="mainController">
-<h1>TO DO LIST</h1>
+	<div ng-controller="mainController">
+		<h1>TO DO LIST</h1>
 
-<div ng-repeat="todo in todos"> 
-{{todo}}
+		<div ng-repeat="todo in todos" id="detailOfTodo"> 
+			<h2>{{ todo.title }}</h2>
+			<p>{{todo.details}}</p>
+		</div>
 
-</div>
-</div>
+	</div>
+
 </body>
 </html>
