@@ -11,12 +11,14 @@
 <body>
 	<div ng-controller="mainController">
 		<h1>TO DO LIST</h1>
+		<input type="text" ng-model="query" placeholder="search...."><br>
 		TITLE: <input type="text" ng-model="title">
 		DETAIL: <input type="text" ng-model = "detail">
 		<button ng-click="addWorkTodo(title,detail)">ADD </button>
-		<div ng-repeat="todo in todos" id="detailOfTodo"> 
+		<div ng-repeat="todo in todos | filter:query" id="detailOfTodo"> 
 			<h2>{{ todo.title }}</h2>
 			<p>{{todo.details}}</p>
+			<button ng-click="deleteWorkTodo($index)">DELETE</button>
 		</div>
 
 	</div>

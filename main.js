@@ -31,10 +31,9 @@ ngTodo.controller("mainController",function($scope){
 		obj.title=title;
 		obj.details=work;
 		$scope.todos.push(obj);
-		console.log(obj);
 	}
-	$scope.deleteWorkTodo=function(work){
-		var index= $scope.todos.indexOf(work);
+	$scope.deleteWorkTodo=function(index){
+		
 		$scope.todos.splice(index,1);
 	}
 	
