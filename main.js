@@ -25,11 +25,15 @@ ngTodo.controller("mainController",function($scope){
 	];
 	
 	
-	$scope.add_work_todo=function(title,work){
-		$scope.todos.push("todos{title:"+title+"}");
-		$scope.todos.push("todos{details:"+work+"}");
+	$scope.addWorkTodo=function(title,work){
+		
+		var obj={};
+		obj.title=title;
+		obj.details=work;
+		$scope.todos.push(obj);
+		console.log(obj);
 	}
-	$scope.delete_work_todo=function(work){
+	$scope.deleteWorkTodo=function(work){
 		var index= $scope.todos.indexOf(work);
 		$scope.todos.splice(index,1);
 	}
